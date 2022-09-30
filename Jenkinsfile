@@ -5,9 +5,11 @@ pipeline{
     }
     stages{
         stage("build"){
-            script{
-                sh 'mvn install'
+            steps{
+                script{
+                    sh 'mvn install'
             }
+
         }
     }
     
