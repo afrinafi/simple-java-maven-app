@@ -47,7 +47,10 @@ pipeline{
         }
         stage("upload artifact"){
             steps{
-               sh 'mvn deploy'
+                configFileProvider([configFile('9ea7eca7-2004-43c0-acb5-6d41a6709c65')]) {
+                    mvn deploy
+                }
+               
             }
         }
         
