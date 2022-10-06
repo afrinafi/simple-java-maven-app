@@ -37,7 +37,7 @@ pipeline{
                         -Dsonar.projectKey=simple-java-maven-app_pipeline \
                         -Dsonar.sources=. \
                         -Dsonar.java.binaries=target \
-                        -Dsonar.host.url=http://172.31.36.123:9000 \
+                        -Dsonar.host.url=http://172.31.32.181:9000 \
                         -Dsonar.login=sqp_6a9dbaa84abf24eddd7b4e6d43fc2c242043345d"
     
                     }
