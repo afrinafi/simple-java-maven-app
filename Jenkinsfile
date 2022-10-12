@@ -32,13 +32,13 @@ pipeline{
         stage("sonar"){
             steps{
                 script{
-                    withSonarQubeEnv(credentialsId: 'my credential') {
+                    withSonarQubeEnv(credentialsId: 'mysonar') {
                         sh "${tool("my sonarqube")}/bin/sonar-scanner \
-                        -Dsonar.projectKey=simple-java-maven-app_pipeline \
+                        -Dsonar.projectKey=simple-java-maven-app \
                         -Dsonar.sources=. \
                         -Dsonar.java.binaries=target \
-                        -Dsonar.host.url=http://172.31.32.181:9000 \
-                        -Dsonar.login=sqp_6a9dbaa84abf24eddd7b4e6d43fc2c242043345d"
+                        -Dsonar.host.url=http://172.31.18.76:9000 \
+                        -Dsonar.login=sqp_03fdc91912927e09e37fca43ffb22f4076233c5b"
     
                     }
                 }
