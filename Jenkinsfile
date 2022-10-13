@@ -1,8 +1,8 @@
 pipeline{
-    agent any 
-    tools{
-        maven 'mymaven'
+    agent{
+  label 'buildserver'
     }
+ 
     stages{
         stage("build"){
             steps{
