@@ -20,7 +20,7 @@
     <mirror>
       <id>central</id>
       <name>central</name>
-      <url>http://18.222.149.187:8081//repository/mymaven-central/</url>
+      <url>http://18.224.183.190:8081//repository/mymaven-central/</url>
       <mirrorOf>*</mirrorOf>
     </mirror>
   </mirrors>
