@@ -2,7 +2,10 @@ pipeline{
     agent{
   label 'buildserver'
     }
-     stages{
+     tools{
+        maven 'mymaven'
+     }
+      stages{
         stage("build"){
             steps{
                 script{
