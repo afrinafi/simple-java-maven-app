@@ -2,8 +2,7 @@ pipeline{
     agent{
   label 'buildserver'
     }
- 
-    stages{
+     stages{
         stage("build"){
             steps{
                 script{
