@@ -52,6 +52,11 @@ pipeline{
                sh 'mvn -s settings.xml deploy'
             }
         }
+          stage("deployment"){
+              steps{
+                  sh 'ansible-playbook -i inventory.yaml simple-java-maven-deploy-playbook.yaml'
+              }
+          }
         
         
 
