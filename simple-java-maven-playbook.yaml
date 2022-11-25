@@ -1,0 +1,17 @@
+---
+- name: deployment
+  hosts: all
+  become: True
+  tasks:
+  - name: Download file from a file path
+    ansible.builtin.get_url:
+      url: http://13.58.233.209:8081/repository/mymaven-snapshots/com/mycompany/app/my-app/1.6.2-SNAPSHOT/my-app-1.6.2-20221124.115919-5.jar
+      dest: /usr/share/apache-tomcat-9.0.68/webapps
+      username: admin
+      password: afrin
+  - name: restart systemd, enable tomcat service and start tomcat service
+    ansible.builtin.systemd:
+       name: tomcat.service
+       daemon-reload: yes
+       state: started
+       enabled: yes

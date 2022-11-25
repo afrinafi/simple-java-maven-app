@@ -53,8 +53,11 @@ pipeline{
             }
         }
           stage("deployment"){
+            agent{
+                label 'ansible_master'
+            }
               steps{
-                  sh 'ansible-playbook -i inventory.yaml simple-java-maven-deploy-playbook.yaml'
+                  sh 'ansible-playbook all -i inventory.yaml simple-java-maven-deploy-playbook.yaml'
               }
           }
         
