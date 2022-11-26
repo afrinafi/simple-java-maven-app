@@ -9,12 +9,12 @@ pipeline{
         stage("build"){
             steps{
                 script{
-                    sh 'mvn install'
+                    sh 'mvn install -Dv=${BUILD_NUMBER}'
                 }
 
             }
         }
-        stage("unit testing"){
+        /*stage("unit testing"){
             steps{
                 
                 sh 'mvn test'
@@ -30,8 +30,8 @@ pipeline{
 
                 }
             }
-        }
-        stage("sonar"){
+        }*/
+        /*stage("sonar"){
             steps{
                 script{
                     withSonarQubeEnv(credentialsId: 'mysonar') {
@@ -46,23 +46,21 @@ pipeline{
                 }
             }
 
-        }
+        }*/
         stage("upload artifact"){
             steps{
-               sh 'mvn -s settings.xml deploy -DuniqueVersion=false'
+               sh 'mvn -s settings.xml deploy'
             }
         }
-          stage("deployment"){
+          /*stage("deployment"){
             agent{
                 label 'ansible_master'
             }
               steps{
                   sh 'ansible-playbook -i inventory.yaml simple-java-maven-playbook.yaml'
               }
-          }
+          }*/
         
-        
-
     }
 
 }   
