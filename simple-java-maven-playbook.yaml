@@ -5,7 +5,7 @@
   tasks:
   - name: Download file from a file path
     ansible.builtin.get_url:
-      url: http://13.58.233.209:8081/repository/mymaven-snapshots/com/mycompany/app/my-app/1.6.2-SNAPSHOT/my-app-1.6.2-20221125.171220-8.jar
+      url: http://http://18.118.170.113:8081/repository/mymaven-snapshots/com/mycompany/app/my-app/1.6.2-SNAPSHOT/my-app-1.6.2-20221125.171220-8.jar
       dest: /usr/share/tomcat/webapps
       username: admin
       password: afrin
