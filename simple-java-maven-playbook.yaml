@@ -2,10 +2,17 @@
 - name: deployment
   hosts: all
   become: True
+  vars:
+    nexus_url: http://18.118.170.113:8081/repository
+    repository_type: mymaven-releases
+    group_id: com/mycompany/app
+    artifact_id: my-app
+    version: 1.6.2
+    build_number: "{{build_number}}"
   tasks:
   - name: Download file from a file path
     ansible.builtin.get_url:
-      url: http://18.118.170.113:8081/repository/mymaven-snapshots/com/mycompany/app/my-app/1.6.2-SNAPSHOT/my-app-1.6.2-20221125.171220-8.jar
+      url: "{{nexus_url}}/{{repository_type}}/{{group_id}}/{{artifact_id}}/{{version}}.{{build_number}}/{{artifact_id}}-{{version}}.{{ build_number}}.jar"
       dest: /usr/share/tomcat/webapps
       username: admin
       password: afrin
