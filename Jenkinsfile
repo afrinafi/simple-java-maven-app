@@ -57,7 +57,7 @@ pipeline{
                 label 'ansible_master'
             }
               steps{
-                  sh 'ansible-playbook -i inventory.yaml simple-java-maven-playbook.yaml --extra-vars 'build_number=${BUILD_NUMBER}''
+                  sh 'ansible-playbook -i inventory.yaml simple-java-maven-playbook.yaml --extra-vars "build_number='${BUILD_NUMBER}'"'
               }
         }
         
