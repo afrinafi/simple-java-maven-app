@@ -3,7 +3,7 @@
   hosts: all
   become: True
   vars:
-    nexus_url: http://18.118.170.113:8081/repository
+    nexus_url: http://18.221.139.2:8081/repository
     repository_type: mymaven-releases
     group_id: com/mycompany/app
     artifact_id: my-app
